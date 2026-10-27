@@ -1,12 +1,33 @@
-## Краткая таблица проектов
+# ML / DS portfolio
 
-| Проект | Ключевая задача | Основные технологии | Результат (метрики на тесте) | Ссылка на модель/данные, что не поместились сюда  |
-|-------|------------------|----------------------|------------------------------|-------------------------|
-| **Семантический поиск (retriever)** | Семантический поиск фильмов по запросам пользователей на 10 языках | Pruning/quantization, transfer-learning, fine-tuning | Triplet loss (margin=0.3) = **0.23**. Уменьшение модели на **63%** без потери качества, real-time inference на CPU (int8) | [Kaggle](https://www.kaggle.com/datasets/kehhill/queries) |
-| **Генерация данных с LLM** | Генерация описаний фильмов и пользовательских запросов | Prompt-engineering, autocast, transformers, CUDA, Qwen-4B, кластер GPU | **70k** натуральных запросов, **6k** структурированных описаний | – |
-| **Классификация и анализ табличных данных** | Предсказать, получит ли студент работу + определить оптимальную стратегию получения места | Scikit-learn, cuML, data preprocessing, data analysis, кластеризация, Optuna | Выявлены топ-параметры и **5 стратегий**, найдена самая успешная | – |
-| **Классификация текста** | Классификация русскоязычных статей | Optuna, XGBoost, Scikit-learn, cuML | F1 = **0.91** на логистической регрессии (TF-IDF) | – |
-| **Временные ряды** | Прогноз спроса на товары | CatBoost, data analysisis, preprocessing, Optuna | RMSE = **0.0233**, MSE = **0.0117**, R² = **0.9995** (CatBoost) | – |
-| **Классификация изображений** | Определение вида спорта по изображению | Torchvision, DenseNet | F1-score = **0.8623** | [Google Drive](https://drive.google.com/file/d/1z9X221ryPWBVLtThGKzyDy0c2mZ_C_nb/view?usp=drive_link) |
-| **Семантическая сегментация изображений** | Сегментация подводных изображений | Torchvision, DeepLab v3, data augmentation | mIoU = **0.813**, Dice = **0.8425**, PA = **0.8425**, mPA = **0.8343** (DeepLab v3 fine-tune) | [Google Drive](https://drive.google.com/file/d/170qd7ajPYatU8iOCPCDvxtt3hFb7cNFL/view?usp=drive_link) |
-| **Регрессия табличных данных** | Предсказание энергоэффективности строения | Scikit-learn, data preprocessing, analysis, Optuna | MAE = **0.25**, R² = **0.9984** (LightGBM) | – |
+Портфолио проектов Богдана Яковенко в области Data Science и Machine Learning: CV, геопространственный ML, NLP, retrieval, LLM/RAG, табличные данные и временные ряды.
+
+## Выделенные работы
+
+| Проект | Что сделано | Лучший зафиксированный результат |
+| --- | --- | --- |
+| [Мультиязычный поиск фильмов](projects/multilingual-movie-retrieval) | BGE-M3 retriever на 10 языках: NLLB-перевод, layer analysis, pruning словаря/слоёв, distillation, fine-tuning и int8 inference. | Размер модели сокращён примерно на **63%**; test triplet loss **0.23**. |
+| [Сегментация подводных сцен SUIM](projects/underwater-segmentation) | 8-классовая сегментация, class-aware crops, синхронные аугментации, combined loss; сравнение DeepLabV3+ и U-Net. | DeepLabV3+ + EfficientNet-B6: **mIoU 0.833**, Dice 0.8702 (локальная валидация). |
+| [Синтетические данные для movie retrieval](projects/synthetic-movie-query-generation) | Mistral формирует структурированные описания, Qwen — поисковые запросы, затем добавляются реалистичные опечатки. | Около **70k запросов** и **6k описаний**. |
+| `kaggle-biohub-cell-tracking` | Командный pipeline 3D cell tracking и восстановления lineage graph: 3D U-Net, temporal links, graph constraints и ILP. | **Серебряная медаль Kaggle**. |
+| `kosmohackathon-ndvi-reconstruction` | Sensor-aware восстановление пропусков NDVI для Sentinel-2, Landsat и MODIS. | hidden test RMSE **0.0536** против baseline 0.1024 (−47.6%). |
+
+## Навигация
+
+- [`projects/`](projects) — 14 самостоятельных работ.
+- [`PORTFOLIO.md`](PORTFOLIO.md) — краткий обзор проектов и соревнований.
+- [`EXPERIENCE_ARCHIVE.md`](EXPERIENCE_ARCHIVE.md) — подробные карточки задач, методов, вклада и результатов.
+- [`portfolio/catalog.json`](portfolio/catalog.json) — структурированный каталог проектов и компетенций.
+
+## Остальные локальные проекты
+
+| Проект | Направление | Результат |
+| --- | --- | --- |
+| [Прогноз трудоустройства](projects/student-employment-prediction) | Tabular ML | пять выявленных стратегий |
+| [Классификация русскоязычных новостей](projects/russian-news-classification) | NLP | F1 **0.91** |
+| [Прогноз спроса](projects/retail-demand-forecasting) | Time series | RMSE **0.0233**, R² **0.9995** |
+| [Классификация спорта на фото](projects/sports-image-classification) | Computer Vision | F1 **0.8623** |
+| [Регрессия энергоэффективности](projects/building-energy-efficiency-regression) | Tabular ML | MAE **0.25**, R² **0.9984** |
+| [Рекомендации Spotify](projects/spotify-topic-recommendation) | Recommender systems | результат не зафиксирован |
+| [Вероятности шахматных ходов](projects/chess-move-probability-estimation) | Deep Learning | сохранены необходимые веса `Hybrid.pt` |
+| [Четыре NLP-эксперимента](projects) | sentiment, NER, fake news, speech | метрики не опубликованы |
