@@ -1,23 +1,46 @@
 # ML / DS portfolio
 
-Портфолио самостоятельных ML/DS-проектов, экспериментов и соревнований. Машиночитаемый источник — [`portfolio/catalog.json`](portfolio/catalog.json), человекочитаемый обзор — [`PORTFOLIO.md`](PORTFOLIO.md), происхождение импорта — [`SOURCES.md`](SOURCES.md).
+Портфолио проектов Богдана Яковенко в области Data Science и Machine Learning: CV, геопространственный ML, NLP, retrieval, LLM/RAG, табличные данные и временные ряды. Здесь хранится только код и материалы, которые допустимо публиковать; командные и закрытые решения описаны с корректным статусом и ссылками на свидетельства.
 
-| ID | Проект | Направление | Подтверждённый результат |
-| --- | --- | --- | --- |
-| `semantic-retrieval-films` | [Семантический поиск фильмов](Семантический%20поиск%20(retrievel)) | NLP, retrieval | Triplet loss 0.23; уменьшение модели на 63% |
-| `llm-film-data-generation` | [Генерация данных о фильмах](генерация%20данных) | LLM, синтетические данные | 70k запросов, 6k описаний |
-| `student-employment-tabular` | [Прогноз трудоустройства](Классификация%20и%20анализ%20табличных%20данных) | табличный ML | 5 стратегий |
-| `russian-news-classification` | [Классификация новостей](Классификация%20текста) | NLP | F1 0.91 |
-| `demand-forecasting` | [Прогноз спроса](временные%20ряды) | временные ряды | RMSE 0.0233; MSE 0.0117; R² 0.9995 |
-| `sports-image-classification` | [Классификация спорта](Классификация%20изображений) | Computer Vision | F1-score 0.8623 |
-| `underwater-semantic-segmentation` | [Сегментация подводных изображений](Семантическая%20сегментация) | Computer Vision | mIoU 0.813; Dice 0.8425 |
-| `building-energy-regression` | [Энергоэффективность зданий](Регрессия) | табличный ML | MAE 0.25; R² 0.9984 |
-| `dns-review-sentiment`, `fake-news-detection`, `roberta-ner`, `speech-sentiment` | [Импортированные NLP-работы](NLP%20и%20речевые%20технологии) | NLP, speech | результат не зафиксирован |
-| `spotify-topic-recommender` | [Рекомендации Spotify](Рекомендательные%20системы) | recommender systems | результат не зафиксирован |
-| `chess-move-probabilities` | [Шахматное тестовое задание](Шахматное%20тестовое%20задание) | Deep Learning | результат не зафиксирован |
+## Выделенные работы
 
-Метрики восьми исходных работ перенесены из ранее подтверждённого README. Ноутбуки содержат авторский код и Markdown, но очищены от старых outputs и `execution_count`; они не служат доказательством сохранённых экспериментов.
+| Проект | Что сделано | Лучший зафиксированный результат |
+| --- | --- | --- |
+| [Мультиязычный поиск фильмов](projects/multilingual-movie-retrieval) | BGE-M3 retriever на 10 языках: NLLB-перевод, layer analysis, pruning словаря/слоёв, distillation, fine-tuning и int8 inference. | Размер модели сокращён примерно на **63%**; test triplet loss **0.23**. |
+| [Сегментация подводных сцен SUIM](projects/underwater-segmentation) | 8-классовая сегментация, class-aware crops, синхронные аугментации, combined loss; сравнение DeepLabV3+ и U-Net. | DeepLabV3+ + EfficientNet-B6: **mIoU 0.833**, Dice 0.8702 (локальная валидация). |
+| [Синтетические данные для movie retrieval](projects/synthetic-movie-query-generation) | Mistral формирует структурированные описания, Qwen — поисковые запросы, затем добавляются реалистичные опечатки. | Около **70k запросов** и **6k описаний**. |
+| `kaggle-biohub-cell-tracking` | Командный pipeline 3D cell tracking и восстановления lineage graph: 3D U-Net, temporal links, graph constraints и ILP. | **Серебряная медаль Kaggle**. Код не копируется из внешнего решения. |
+| `kosmohackathon-ndvi-reconstruction` | Sensor-aware восстановление пропусков NDVI для Sentinel-2, Landsat и MODIS. | hidden test RMSE **0.0536** против baseline 0.1024 (−47.6%). |
 
-## Пополнение
+## Навигация
 
-Добавьте код, запись с устойчивым `id` в `portfolio/catalog.json`, ссылку на ID в `PORTFOLIO.md` и запустите `python tools/validate_portfolio.py`.
+- [`projects/`](projects) — 14 локальных самостоятельных работ; каждая папка названа по задаче, а не по технологии.
+- [`PORTFOLIO.md`](PORTFOLIO.md) — краткий обзор проектов и соревнований.
+- [`EXPERIENCE_ARCHIVE.md`](EXPERIENCE_ARCHIVE.md) — публичная, отредактированная версия банка опыта: задачи, методы, вклад и статус результатов.
+- [`portfolio/catalog.json`](portfolio/catalog.json) — основной машиночитаемый каталог для будущей генерации резюме.
+- [`SOURCES.md`](SOURCES.md) — происхождение импортированных материалов.
+
+## Остальные локальные проекты
+
+| Проект | Направление | Результат |
+| --- | --- | --- |
+| [Прогноз трудоустройства](projects/student-employment-prediction) | Tabular ML | пять выявленных стратегий |
+| [Классификация русскоязычных новостей](projects/russian-news-classification) | NLP | F1 **0.91** |
+| [Прогноз спроса](projects/retail-demand-forecasting) | Time series | RMSE **0.0233**, R² **0.9995** |
+| [Классификация спорта на фото](projects/sports-image-classification) | Computer Vision | F1 **0.8623** |
+| [Регрессия энергоэффективности](projects/building-energy-efficiency-regression) | Tabular ML | MAE **0.25**, R² **0.9984** |
+| [Рекомендации Spotify](projects/spotify-topic-recommendation) | Recommender systems | результат не зафиксирован |
+| [Вероятности шахматных ходов](projects/chess-move-probability-estimation) | Deep Learning | сохранены необходимые веса `Hybrid.pt` |
+| [Четыре NLP-эксперимента](projects) | sentiment, NER, fake news, speech | результаты не подтверждены |
+
+## Надёжность результатов
+
+Значение всегда сопровождается характером проверки: локальная валидация, hidden/public/private leaderboard или официальное достижение. Сохранённые outputs ноутбуков удалены и не используются как доказательство. Записи с `unknown` в каталоге не содержат придуманных метрик.
+
+## Для сопровождения
+
+Добавьте новый проект в `projects/<kebab-case-name>/`, создайте устойчивый `id` в `portfolio/catalog.json`, сошлитесь на него в обзоре и выполните:
+
+```powershell
+python tools/validate_portfolio.py
+```
