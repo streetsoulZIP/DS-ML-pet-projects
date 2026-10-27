@@ -2,7 +2,7 @@
 
 ## Задача
 
-Подготовить query–description пары для обучения мультиязычного movie retriever без копирования пользовательских запросов с сайтов. Отдельно моделируются описание фильма, естественный поисковый запрос и типичные опечатки.
+Подготовить query–description пары для обучения мультиязычного movie retriever. Отдельно моделируются описание фильма, естественный поисковый запрос и типичные опечатки.
 
 ## Последовательность
 
@@ -19,7 +19,7 @@
 | [03_add-typos-to-queries.ipynb](03_add-typos-to-queries.ipynb) | добавление ошибок и неточностей в запросы |
 | [queries_and_desc.parquet](queries_and_desc.parquet) | подготовленный публичный датасет |
 
-Также сохранен [legacy experiment](00_legacy-film-description-experiment.ipynb) из исходного репозитория; он не заменяет основной пайплайн.
+Дополнительный эксперимент генерации описаний: [00_legacy-film-description-experiment.ipynb](00_legacy-film-description-experiment.ipynb).
 
 ## Результат
 

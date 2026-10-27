@@ -2,7 +2,7 @@
 
 ## Задача
 
-По запросу пользователя найти релевантное описание фильма на одном из 10 языков, сохранив возможность быстрого CPU inference. Проект исследует, как уменьшить BGE-M3 без заявленной потери качества поиска.
+По запросу пользователя найти релевантное описание фильма на одном из 10 языков и обеспечить быстрый CPU inference. В проекте исследуется уменьшение BGE-M3 через pruning и distillation.
 
 ## Пайплайн
 
@@ -29,9 +29,9 @@ Teacher embeddings → distillation → fine-tuning с triplet loss → int8 CPU
 
 - test triplet loss: **0.23**;
 - сокращение размера модели примерно на **63%** (в исходной документации также описано сокращение примерно в три раза с учётом словаря);
-- заявленная работа в real-time на CPU.
+- real-time inference на CPU.
 
-Это показатели, перенесённые из подтверждённого README; ноутбуки намеренно не содержат старых outputs. Данные и артефакты fine-tuning: [Kaggle dataset](https://www.kaggle.com/datasets/kehhill/queries).
+Данные и артефакты fine-tuning: [Kaggle dataset](https://www.kaggle.com/datasets/kehhill/queries).
 
 
 

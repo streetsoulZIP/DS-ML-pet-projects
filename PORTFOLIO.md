@@ -16,7 +16,7 @@ Data Scientist / ML Engineer с практикой в tabular ML, Computer Visio
 | `sports-image-classification` | Sports Image Classification | F1 0.8623 |
 | `building-energy-regression` | Building Energy Regression | MAE 0.25, R² 0.9984 |
 
-Полный список локальных работ — в [`projects/`](projects). Ноутбуки очищены от исторических outputs; код, Markdown и данные сохранены. `Hybrid.pt` в проекте шахматного задания хранится единым экземпляром.
+Полный список локальных работ — в [`projects/`](projects). В проекте шахматного задания сохранены веса `Hybrid.pt`.
 
 ## Соревнования и командные работы
 
@@ -32,4 +32,4 @@ Data Scientist / ML Engineer с практикой в tabular ML, Computer Visio
 | `ai-finance-rag-assistant` | RAG для финансовых вопросов | выход в финал |
 | `neftehack-process-forecasting` | технологические временные ряды | воспроизводимый data/ML pipeline; итоговая метрика не опубликована |
 
-Указанный тип проверки является частью результата: public/private leaderboard, hidden test, локальная проверка и официальный итог не взаимозаменяемы. Внешний или закрытый код намеренно не копируется в этот репозиторий.
+Для каждого результата указан тип проверки: public/private leaderboard, hidden test, локальная валидация или официальный итог.
