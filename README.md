@@ -18,7 +18,6 @@
 - [`PORTFOLIO.md`](PORTFOLIO.md) — краткий обзор проектов и соревнований.
 - [`EXPERIENCE_ARCHIVE.md`](EXPERIENCE_ARCHIVE.md) — подробные карточки задач, методов, вклада и результатов.
 - [`portfolio/catalog.json`](portfolio/catalog.json) — структурированный каталог проектов и компетенций.
-- [`SOURCES.md`](SOURCES.md) — происхождение импортированных материалов.
 
 ## Остальные локальные проекты
 
