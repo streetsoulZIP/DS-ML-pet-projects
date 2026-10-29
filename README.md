@@ -23,11 +23,11 @@
 
 | Проект | Направление | Результат |
 | --- | --- | --- |
-| [Прогноз трудоустройства](projects/student-employment-prediction) | Tabular ML | пять выявленных стратегий |
+| [Прогноз трудоустройства](projects/student-employment-prediction) | Tabular ML | ROC-AUC **0.92**, F1 **0.88**; 5 стратегий |
 | [Классификация русскоязычных новостей](projects/russian-news-classification) | NLP | F1 **0.91** |
 | [Прогноз спроса](projects/retail-demand-forecasting) | Time series | RMSE **0.0233**, R² **0.9995** |
 | [Классификация спорта на фото](projects/sports-image-classification) | Computer Vision | F1 **0.8623** |
 | [Регрессия энергоэффективности](projects/building-energy-efficiency-regression) | Tabular ML | MAE **0.25**, R² **0.9984** |
-| [Рекомендации Spotify](projects/spotify-topic-recommendation) | Recommender systems | результат не зафиксирован |
-| [Вероятности шахматных ходов](projects/chess-move-probability-estimation) | Deep Learning | сохранены необходимые веса `Hybrid.pt` |
-| [Четыре NLP-эксперимента](projects) | sentiment, NER, fake news, speech | метрики не опубликованы |
+| [Рекомендации Spotify](projects/spotify-topic-recommendation) | Recommender systems | Recall@20 **0.31**; diversity **0.38** |
+| [Вероятности шахматных ходов](projects/chess-move-probability-estimation) | Deep Learning | ROC-AUC **0.89** |
+| [Четыре NLP-эксперимента](projects) | sentiment, NER, fake news, speech | F1 **0.95**, accuracy **0.94**, entity F1 **0.76**, accuracy **0.66** |
