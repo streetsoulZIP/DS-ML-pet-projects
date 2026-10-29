@@ -17,7 +17,7 @@
 - [`projects/`](projects) — 14 самостоятельных работ.
 - [`PORTFOLIO.md`](PORTFOLIO.md) — краткий обзор проектов и соревнований.
 - [`EXPERIENCE_ARCHIVE.md`](EXPERIENCE_ARCHIVE.md) — подробные карточки задач, методов, вклада и результатов.
-- [`portfolio/catalog.json`](portfolio/catalog.json) — структурированный каталог проектов и компетенций.
+- [`portfolio/catalog.json`](portfolio/catalog.json) — полная структурированная сводка проектов, компетенций и результатов для автоматического отбора и ИИ-систем.
 
 ## Остальные локальные проекты
 
