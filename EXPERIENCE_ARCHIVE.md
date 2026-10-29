@@ -28,7 +28,7 @@ Change detection базовой/пиковой воды и новых зон н�
 
 ### Multilingual Movie Retrieval
 
-Локальный код: [`projects/multilingual-movie-retrieval`](projects/multilingual-movie-retrieval). Вход — пользовательский запрос на одном из 10 языков и набор описаний фильмов; выход — ранжирование описаний по смысловой близости к запросу. Для этого подготовлены multilingual query–description пары через NLLB, проведён анализ слоёв BGE-M3, pruning словаря и слоёв, teacher–student distillation, triplet fine-tuning и int8-квантизация для CPU inference. **Test triplet loss 0.23**, уменьшение размера модели около 63%.
+Локальный код: [`projects/multilingual-movie-retrieval`](projects/multilingual-movie-retrieval). BGE-M3 ранжирует описания фильмов по запросам на 10 языках; применены NLLB, pruning, distillation, triplet fine-tuning и int8 inference. **Test triplet loss 0.23**, уменьшение размера модели около 63%.
 
 ### Synthetic Movie Query Generation
 
@@ -40,13 +40,13 @@ Change detection базовой/пиковой воды и новых зон н�
 
 ### LLM-разметка товарных пар
 
-Задача — сделать сравнимыми две карточки маркетплейса, в которых одни и те же характеристики могут быть записаны по-разному или спрятаны в длинном описании. Gemma/Qwen через llama.cpp и GGUF извлекают бренд, модель, размеры, комплектацию и другие атрибуты в строгую JSON schema; затем Critic проверяет извлечение, а Judge принимает итоговую разметку. Реализованы repair/retry, кэширование и контроль качества. На контрольной выборке из 500 пар согласованность атрибутов с ручной разметкой составила **85.2%**, self-consistency Judge — **92.4%**, precision veto у Critic — **89.7%**, а JSON schema valid rate после repair/retry — **98.1%**.
+Gemma/Qwen извлекают из описаний товарных карточек бренд, модель, размеры и комплектацию в JSON; Critic и Judge проверяют разметку. На 500 ручных парах agreement — **85.2%**, Judge self-consistency — **92.4%**, Critic veto precision — **89.7%**, JSON valid rate — **98.1%**.
 
 ## Tabular ML, recommender systems и временные ряды
 
 ### Ozon E-CUP: product matching
 
-Нужно определить, относятся ли две карточки маркетплейса к одному товару, даже если названия отличаются, а важные различия скрыты в размере, модели или комплектации. Использованы нормализация атрибутов, typed features, NER, OCR текста на фото, image/text encoders, cross-attention и hard negatives. **Macro PR-AUC 0.769580845** на отдельной локальной Human validation (~73k строк); это не официальный leaderboard результат.
+Определение дубликатов товарных карточек по тексту, атрибутам, изображениям и OCR. Использованы NER, cross-attention и hard negatives. **Macro PR-AUC 0.769580845** на локальной Human validation (~73k строк).
 
 ### Ozon E-CUP: LTV/GMV forecasting
 
