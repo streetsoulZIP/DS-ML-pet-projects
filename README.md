@@ -6,11 +6,11 @@
 
 | Проект | Что сделано | Лучший зафиксированный результат |
 | --- | --- | --- |
-| [Мультиязычный поиск фильмов](projects/multilingual-movie-retrieval) | BGE-M3 retriever на 10 языках: NLLB-перевод, layer analysis, pruning словаря/слоёв, distillation, fine-tuning и int8 inference. | Размер модели сокращён примерно на **63%**; test triplet loss **0.23**. |
+| [Мультиязычный поиск фильмов](projects/multilingual-movie-retrieval) | По запросу на одном из 10 языков ранжирует описания фильмов. Для этого подготовлены multilingual пары, сокращён BGE-M3 и выполнены distillation, fine-tuning и int8 inference. | Размер модели сокращён примерно на **63%**; test triplet loss **0.23**. |
 | [Сегментация подводных сцен SUIM](projects/underwater-segmentation) | 8-классовая сегментация, class-aware crops, синхронные аугментации, combined loss; сравнение DeepLabV3+ и U-Net. | DeepLabV3+ + EfficientNet-B6: **mIoU 0.833**, Dice 0.8702 (локальная валидация). |
 | [Синтетические данные для movie retrieval](projects/synthetic-movie-query-generation) | Mistral формирует структурированные описания, Qwen — поисковые запросы, затем добавляются реалистичные опечатки. | Около **70k запросов** и **6k описаний**. |
 | `kaggle-biohub-cell-tracking` | Командный pipeline 3D cell tracking и восстановления lineage graph: 3D U-Net, temporal links, graph constraints и ILP. | **Серебряная медаль Kaggle**. |
-| `kosmohackathon-ndvi-reconstruction` | Sensor-aware восстановление пропусков NDVI для Sentinel-2, Landsat и MODIS. | hidden test RMSE **0.0536** против baseline 0.1024 (−47.6%). |
+| `kosmohackathon-ndvi-reconstruction` | Восстанавливает пропуски NDVI в спутниковых временных рядах Sentinel-2, Landsat и MODIS, учитывая смещения между сенсорами и сезонность. | hidden test RMSE **0.0536** против baseline 0.1024 (−47.6%). |
 
 ## Навигация
 
