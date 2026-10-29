@@ -18,7 +18,10 @@ Data Scientist / ML Engineer с практикой в tabular ML, Computer Visio
 | `student-employment-tabular` | Student Employment Prediction | ROC-AUC 0.92, F1 0.88; 5 стратегий трудоустройства |
 | `spotify-topic-recommender` | Spotify Topic Recommendations | Recall@20 0.31; intra-list diversity 0.38 |
 | `chess-move-probabilities` | Chess Move Probability Estimation | held-out ROC-AUC 0.89 |
-| `dns-review-sentiment`, `fake-news-detection`, `roberta-ner`, `speech-sentiment` | Четыре NLP-эксперимента | F1 0.95; accuracy 0.94; entity F1 0.76; accuracy 0.66 |
+| `dns-review-sentiment` | Тональность отзывов DNS | F1 0.95; ROC-AUC 0.97 |
+| `fake-news-detection` | Детекция фейковых новостей WELFake | accuracy 0.94; baseline 0.90 |
+| `roberta-ner` | NER на резюме | entity-level F1 0.76 (seqeval) |
+| `speech-sentiment` | Эмоции в аудио CREMA-D | accuracy 0.66; random baseline 0.167 |
 
 Полный список локальных работ — в [`projects/`](projects). В проекте шахматного задания сохранены веса `Hybrid.pt`.
 
