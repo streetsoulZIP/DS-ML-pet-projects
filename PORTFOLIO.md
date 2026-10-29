@@ -27,17 +27,17 @@ Data Scientist / ML Engineer с практикой в tabular ML, Computer Visio
 
 ## Соревнования и командные работы
 
-| ID | Содержание | Результат |
+| ID | Задача и работа | Результат |
 | --- | --- | --- |
-| `kaggle-biohub-cell-tracking` | 3D tracking и lineage reconstruction | **Kaggle Silver Medal** |
-| `kosmohackathon-fires` | спутниковый мониторинг природных пожаров | team private Score **0.8307** |
-| `kosmohackathon-ndvi-reconstruction` | sensor-aware NDVI reconstruction | hidden test RMSE **0.0536** |
-| `kosmohackathon-hydrowatch` | flood change detection | public Score **0.8943**; переносимость отдельно проверена |
-| `ozon-ecup-product-matching` | matching товарных карточек | local Human validation macro PR-AUC **0.769580845** |
-| `ozon-ecup-ltv-forecasting` | LTV/GMV forecasting | ~1.67 RMSE в log1p(GMV) |
-| `data-fest-2026-track-2` | 41-target classification на ~750k клиентах | local Macro ROC-AUC ~**0.83** |
-| `ai-finance-rag-assistant` | RAG для финансовых вопросов | выход в финал |
-| `llm-product-attribute-labeling` | LLM-разметка товарных пар | agreement 85.2%; JSON valid rate 98.1% |
-| `neftehack-process-forecasting` | технологические временные ряды | held-out normalized RMSE 0.061; MAPE 7.1%; R² 0.902 |
+| `kaggle-biohub-cell-tracking` | По 3D-микроскопическим кадрам восстановить траектории клеток и их деления. Объединены 3D-детекция, межкадровые связи и graph/ILP-постобработка. | **Kaggle Silver Medal** |
+| `kosmohackathon-fires` | По VIIRS, Sentinel-1/2 и GIS-данным найти активное горение и сегментировать площадь/степень выгорания. Rule baseline для огня объединён с U-Net-ансамблем для последствий пожара. | team private Score **0.8307** |
+| `kosmohackathon-ndvi-reconstruction` | Восстановить пропуски индекса растительности NDVI в сериях Sentinel-2, Landsat и MODIS. LightGBM использует соседние измерения, сезон, сенсор и погодные признаки. | hidden test RMSE **0.0536** |
+| `kosmohackathon-hydrowatch` | По спутниковым сценам до и во время события выделить исходную воду, воду в пик и новые зоны затопления. Сравнены Siamese ResNet18 и boosting. | public Score **0.8943**; на независимых событиях boosting — 0.4646 |
+| `ozon-ecup-product-matching` | Определить, описывают ли две карточки маркетплейса один товар: используются названия, атрибуты, изображения и OCR-текст. | local Human validation macro PR-AUC **0.769580845** |
+| `ozon-ecup-ltv-forecasting` | По истории покупок и событий прогнозировать будущий GMV/LTV клиента; реализованы rolling/decay признаки и memory-efficient LightGBM pipeline. | ~1.67 RMSE в log1p(GMV) |
+| `data-fest-2026-track-2` | Предсказать 41 бинарную характеристику клиента по ~2k признакам на ~750k объектах; применены per-target модели, feature selection и stacking. | local Macro ROC-AUC ~**0.83** |
+| `ai-finance-rag-assistant` | Отвечать на финансовые и правовые вопросы по корпусу документов: retrieval в FAISS, reranking и генерация с проверкой ответа. | выход в финал |
+| `llm-product-attribute-labeling` | Превратить неструктурированные описания двух товарных карточек в сравнимые атрибуты — бренд, модель, размер, комплектация — и проверить разметку цепочкой Extractor–Critic–Judge. | agreement 85.2%; JSON valid rate 98.1% |
+| `neftehack-process-forecasting` | По телеметрии и лабораторным измерениям нефтепереработки прогнозировать качество продукта и оценивать возможные управляющие действия. | held-out normalized RMSE 0.061; MAPE 7.1%; R² 0.902 |
 
 Для каждого результата указан тип проверки: public/private leaderboard, hidden test, локальная валидация или официальный итог.
