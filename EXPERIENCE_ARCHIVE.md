@@ -76,9 +76,18 @@ Multi-target классификация 41 бинарной цели на ~750k 
 
 Бинарный скоринг легальных ходов для FEN-позиции: AlphaZero-кодирование доски 12×8×8, гибрид ConvNeXt + Transformer (`Hybrid.pt`), XGBoost с Optuna и GPU-обучением чанками. **ROC-AUC 0.89** на отложенных парах `(fen, move)`; inference выполняется на CPU без шахматного движка.
 
-### Четыре NLP-эксперимента
+### Тональность русскоязычных отзывов DNS
 
-- Тональность русскоязычных отзывов DNS: CNN с тремя Conv1D и BatchNorm — accuracy **0.95**, F1 **0.95**, ROC-AUC **0.97**.
-- WELFake: `Embedding(20k) → LSTM(150) → GlobalMaxPool` — accuracy **0.94** против 0.90 у TF-IDF + Logistic Regression baseline.
-- NER на резюме: RoBERTa-base token classification — entity-level F1 **0.76** по seqeval.
-- Эмоции CREMA-D: 40 MFCC → LSTM(256), 6 классов — accuracy **0.66** при случайном baseline 0.167.
+CNN с тремя Conv1D и BatchNorm для анализа отзывов: accuracy **0.95**, F1 **0.95**, ROC-AUC **0.97**.
+
+### Детекция фейковых новостей WELFake
+
+`Embedding(20k) → LSTM(150) → GlobalMaxPool`: accuracy **0.94** против 0.90 у TF-IDF + Logistic Regression baseline.
+
+### NER на резюме
+
+RoBERTa-base для token classification: entity-level F1 **0.76** по seqeval.
+
+### Классификация эмоций в аудио CREMA-D
+
+40 MFCC → LSTM(256), шесть классов эмоций: accuracy **0.66** при случайном baseline 0.167.

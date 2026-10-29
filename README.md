@@ -30,4 +30,7 @@
 | [Регрессия энергоэффективности](projects/building-energy-efficiency-regression) | Tabular ML | MAE **0.25**, R² **0.9984** |
 | [Рекомендации Spotify](projects/spotify-topic-recommendation) | Recommender systems | Recall@20 **0.31**; diversity **0.38** |
 | [Вероятности шахматных ходов](projects/chess-move-probability-estimation) | Deep Learning | ROC-AUC **0.89** |
-| [Четыре NLP-эксперимента](projects) | sentiment, NER, fake news, speech | F1 **0.95**, accuracy **0.94**, entity F1 **0.76**, accuracy **0.66** |
+| [Тональность отзывов DNS](projects/dns-review-sentiment-analysis) | NLP, sentiment analysis | F1 **0.95**, ROC-AUC **0.97** |
+| [Детекция фейковых новостей](projects/fake-news-detection) | NLP, text classification | accuracy **0.94** |
+| [NER на резюме](projects/roberta-ner) | NLP, token classification | entity-level F1 **0.76** |
+| [Классификация эмоций в речи](projects/speech-sentiment-classification) | Speech, emotion recognition | accuracy **0.66** |
